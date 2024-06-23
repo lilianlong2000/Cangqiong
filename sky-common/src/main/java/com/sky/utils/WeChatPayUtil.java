@@ -46,8 +46,6 @@ public class WeChatPayUtil {
 
     /**
      * 获取调用微信接口的客户端工具对象
-     *
-     * @return
      */
     private CloseableHttpClient getClient() {
         PrivateKey merchantPrivateKey = null;
@@ -74,10 +72,6 @@ public class WeChatPayUtil {
 
     /**
      * 发送post方式请求
-     *
-     * @param url
-     * @param body
-     * @return
      */
     private String post(String url, String body) throws Exception {
         CloseableHttpClient httpClient = getClient();
