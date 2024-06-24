@@ -35,4 +35,10 @@ public class OrderController {
         OrderPaymentVO orderPaymentVO = orderService.payment(ordersPaymentDTO);
         return Result.success(orderPaymentVO);
     }
+
+    @GetMapping("/reminder/{id}")
+    public Result reminder(@PathVariable Long id)  {
+        orderService.reminder(id);
+        return Result.success();
+    }
 }
