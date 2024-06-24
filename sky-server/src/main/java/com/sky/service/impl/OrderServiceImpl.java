@@ -92,6 +92,15 @@ public class OrderServiceImpl implements OrderService {
                 .id(orders.getId())
                 .orderAmount(orders.getAmount())
                 .build();
+
+
+        // TODO 这是测试代码，测试webSocket
+        Map map = new HashMap();
+        map.put("type",1);
+        map.put("orderId", LocalDateTime.now());
+        map.put("content","订单号：" + LocalDateTime.now());
+        webSocketServer.sendToAllClient(JSON.toJSONString(map));
+
         return orderSubmitVO;
     }
 
