@@ -43,6 +43,15 @@ public class ReportController {
         return Result.success(reportService.getUserStatistics(begin,end));
     }
 
+
+    @GetMapping("/ordersStatistics")
+    @ApiOperation("订单统计")
+    public Result<OrderReportVO> ordersStatistics(
+            @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate begin,
+            @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate end){
+        return Result.success(reportService.getOrdersStatistics(begin,end));
+    }
+
     @GetMapping("/top10")
     @ApiOperation("销量排名top10")
     public Result<SalesTop10ReportVO> top10(
